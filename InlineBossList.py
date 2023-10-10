@@ -77,6 +77,10 @@ class InlineBossList(loader.Module):
             ),
             
         )
+        @loader.command()
+    async def helpibl(self,message):
+    	''' - помощь по модулю'''
+    	await utils.answer(message,f"<b>Помощь по модулю InlineBossList</b>\n\n• <b>Если у вас перестал работать Инлайн Босс Лист, и показывает ошибку, просит посмотреть логи, зайдите в группу в архиве, которую создал модуль «InlineBossList», и удалите там сообщение последнее, которое было от вас, скорее всего перестало работать только из-за того что бот MineEVO не скинул босс лист.</b>")
     @loader.command(alias = 'bl')    
     async def bosslist(self, message):
         ''' - инлайн босс лист'''
