@@ -59,7 +59,7 @@ class Подвал(loader.Module):
                 [
                     {
                         "text" : f"Выпустить детей",
-                        "callback" : self.idrest,
+                        "callback" : self.rasp,
                     },
                 ],
                 [
@@ -70,7 +70,7 @@ class Подвал(loader.Module):
                 ]
             ]
         )
-    async def idrest(self,call: InlineCall):
+    async def rasp(self,call: InlineCall):
         det = self.get("det",0)
         self.set("det",0)
         await call.edit(
@@ -79,7 +79,7 @@ class Подвал(loader.Module):
                 [
                     {
                         "text" : f"Выпустить детей",
-                        "callback" : self.idrest,
+                        "callback" : self.rasp,
                     },
                 ],
                 [
