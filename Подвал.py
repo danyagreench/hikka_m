@@ -172,7 +172,7 @@ class Подвал(loader.Module):
         username = user.username or "null"
         monetivs = self.get("monetivs",0)
         detvs = self.get("detvs",0)
-        await utils.answer(message, f"<b>@{username}, ваша статистика:\nМонет заработано всего с продажи органов: {monetivs}\nДетей было в подвале всего: {detvs}</b>")
+        await utils.answer(message, f"<b>@{username}, ваша статистика:\nМонет заработано всего с продажи органов: {monetivs}\nДетей было в подвале всего: {detvs}\n\nОткрыто кейсов всего: {otkcases}\nОткрыто Дет-Кейсов: {detotk}\nОткрыто Монет-Кейсов: {monetotk}</b>")
     @loader.command()
     async def кейсы(self,message):
         '''- ваши кейсы'''
@@ -198,6 +198,8 @@ class Подвал(loader.Module):
         random_numgdc = random.randint(1, 100)
         det = self.get("det",0)
         detvs = self.get("detvs",0)
+        detotk = self.get("detotk",0)
+        otkcases = self.get("otkcases",0)
         if detcase == 0:
             await utils.answer(message, "<b>У вас не хватает Дет-Кейса</b>")
         else:
@@ -205,15 +207,21 @@ class Подвал(loader.Module):
             det += random_numgdc
             detvs += random_numgdc
             detcase -= 1
+            detotk += 1
+            otkcases += 1
             self.set("det", det)
             self.set("detvs", detvs)
             self.set("detcase", detcase)
+            self.set("detotk", detotk)
+            self.set("otkcases", otkcases)
     @loader.command()
     async def открыть_мк(self, message: Message):
         '''- Открыть монет-кейс'''
         monetcase = self.get("monetcase",0)
         random_numgdc = random.randint(1, 150)
         moneti = self.get("moneti",0)
+        monetotk = self.get("monetotk",0)
+        otkcases = self.get("otkcases",0)
         monetivs = self.get("monetivs",0)
         if monetcase == 0:
             await utils.answer(message, "<b>У вас не хватает Монет-Кейса</b>")
@@ -222,9 +230,13 @@ class Подвал(loader.Module):
             moneti += random_numgdc
             monetivs += random_numgdc
             monetcase -= 1
+            monetotk += 1
+            otkcases += 1
             self.set("moneti", moneti)
             self.set("monetivs", monetivs)
             self.set("monetcase", monetcase)
+            self.set("monetotk", monetotk)
+            self.set("otkcases", otkcases)
     @loader.command()
     async def купить_дк(self, message: Message):
         '''- Купить дет-кейс'''
