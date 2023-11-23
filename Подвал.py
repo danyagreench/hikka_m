@@ -173,7 +173,7 @@ class Подвал(loader.Module):
         monetivs = self.get("monetivs",0)
         detvs = self.get("detvs",0)
         detotk = self.get("detotk",0)
-        monetotk = self.get("detotk",0)
+        monetotk = self.get("monetotk",0)
         otkcases = self.get("otkcases",0)
         await utils.answer(message, f"<b>@{username}, ваша статистика:\nМонет заработано всего с продажи органов: {monetivs}\nДетей было в подвале всего: {detvs}\n\nОткрыто кейсов всего: {otkcases}\nОткрыто Дет-Кейсов: {detotk}\nОткрыто Монет-Кейсов: {monetotk}</b>")
     @loader.command()
