@@ -1,0 +1,20 @@
+{
+    "case_prices": {
+        "common_envelope": 500,
+        "rare_envelope": 85,
+        "common_case": 40,
+        "rare_case": 10,
+        "mythical_case": 1,
+        "sketch_case": 0.2,
+        "crystal_case": 0.25,
+        "random_case": 0.125,
+        "item_case": 0.125,
+        "equipment_case": 0.125,
+        "rune_case": 0.1,
+        "gooditem_case": 0.02,
+        "skin_case": 0.01666667,
+        "void_case": 0.004,
+        "singular_case": 0.0008888
+    },
+    "mythical_case_price": 4
+},
